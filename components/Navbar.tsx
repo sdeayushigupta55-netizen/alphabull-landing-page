@@ -26,8 +26,9 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-black/10 bg-white/70 backdrop-blur dark:border-white/10 dark:bg-ink-950/70">
       <Container className="py-3 flex items-center justify-between gap-3">
         <Link href="/" className="flex items-center gap-3">
-          <Logo size="md" />
-          
+          <span>
+            <Logo size="md" />
+          </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
