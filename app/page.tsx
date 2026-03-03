@@ -30,7 +30,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-10 pb-16 lg:pt-0">
           <div className="grid items-center gap-10 lg:grid-cols-2">
             {/* RIGHT VISUAL (image first on mobile) */}
-             <FadeUp>
+            <FadeUp>
               <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs font-semibold text-white backdrop-blur">
                 📈 Forex • Stocks • Crypto • Beginner Friendly
               </p>
@@ -82,7 +82,7 @@ export default function HomePage() {
                 ))}
               </div>
             </FadeUp>
-          
+
 
             {/* LEFT CONTENT */}
             <FadeUp delay={0.1}>
@@ -110,12 +110,13 @@ export default function HomePage() {
                 </div>
 
                 {/* Floating chips */}
+                
                 <div className="absolute top-3 left-3 sm:top-6 sm:left-6 z-20 rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-xs text-white/90 backdrop-blur shadow-lg">
-                  🔔 Live Signals • Q/A
+                  🔔 Live • Q/A
                 </div>
 
                 <div className="absolute right-3 sm:top-24 sm:right-6 z-20 rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-xs text-white/90 backdrop-blur shadow-lg">
-                  ✅ Risk Managed Setup
+                  ✅ Risk Managed 
                 </div>
 
                 <div className="absolute bottom-6 left-3 sm:bottom-10 sm:left-6 z-20 rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-xs text-white/90 backdrop-blur shadow-lg">
@@ -146,7 +147,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
             {/* LEFT */}
-             <FadeUp delay={0.08}>
+            <FadeUp delay={0.08}>
               <div className="relative mx-auto w-full max-w-xl">
                 <div className="pointer-events-none absolute -inset-10 -z-10 rounded-[3rem] bg-gradient-to-br from-brandBlue-500/12 via-amber-400/10 to-emerald-400/10 blur-2xl" />
 
@@ -155,7 +156,7 @@ export default function HomePage() {
                     <img
                       src="/about-trading.png"
                       alt="Trading"
-                      className="h-[360px] sm:h-[480px] lg:h-[700px] w-full object-cover object-center"
+                      className=" sm:h-[480px] lg:h-[700px] w-full object-cover object-center"
                     />
 
                     <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.35),transparent_55%)]" />
@@ -172,7 +173,7 @@ export default function HomePage() {
                         </p>
                       </div>
                     </div>
-<div className="hidden lg:block absolute top-4 left-4 sm:top-6 sm:left-6 space-y-3">
+                    <div className="hidden lg:block absolute top-4 left-4 sm:top-6 sm:left-6 space-y-3">
                       {[
                         "📌 Clean Setups",
                         "🧠 Psychology + Discipline",
@@ -192,7 +193,7 @@ export default function HomePage() {
                 </div>
               </div>
             </FadeUp>
-           
+
 
             {/* RIGHT */}
             <FadeUp>
