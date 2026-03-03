@@ -114,7 +114,7 @@ export default function HomePage() {
                   🔔 Live Signals • Q/A
                 </div>
 
-                <div className="absolute top-16 right-3 sm:top-24 sm:right-6 z-20 rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-xs text-white/90 backdrop-blur shadow-lg">
+                <div className="absolute right-3 sm:top-24 sm:right-6 z-20 rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-xs text-white/90 backdrop-blur shadow-lg">
                   ✅ Risk Managed Setup
                 </div>
 
@@ -172,8 +172,7 @@ export default function HomePage() {
                         </p>
                       </div>
                     </div>
-
-                    <div className="absolute top-4 left-4 sm:top-6 sm:left-6 space-y-3">
+<div className="hidden lg:block absolute top-4 left-4 sm:top-6 sm:left-6 space-y-3">
                       {[
                         "📌 Clean Setups",
                         "🧠 Psychology + Discipline",
