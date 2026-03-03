@@ -27,7 +27,7 @@ export default function HomePage() {
         <div className="pointer-events-none absolute top-20 right-[-120px] -z-10 h-[520px] w-[520px] rounded-full bg-emerald-400/15 blur-3xl dark:bg-emerald-400/10" />
         <div className="pointer-events-none absolute bottom-[-180px] left-[-120px] -z-10 h-[520px] w-[520px] rounded-full bg-gold-400/15 blur-3xl dark:bg-gold-400/10" />
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-10 pb-16 lg:pt-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-10 pb-16 lg:pt-0">
           <div className="grid items-center gap-10 lg:grid-cols-2">
             {/* RIGHT VISUAL (image first on mobile) */}
              <FadeUp>
