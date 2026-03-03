@@ -1,8 +1,65 @@
 "use client";
+
 import Image from "next/image";
-import { FadeUp } from "@/components/Motion";
-import { Section } from "@/components/Section";
 import Button from "@/components/Button";
+import { FadeUp, HoverLift } from "@/components/Motion";
+import { Section, SectionHeader } from "@/components/Section";
+
+// export const metadata = {
+//   title: "AlphaBull Trading Academy",
+// };
+
+const highlights = [
+  {
+    title: "Learn From Scratch",
+    desc: "Understand market basics, price behavior, and a beginner-friendly roadmap.",
+  },
+  {
+    title: "300+ Revision Support",
+    desc: "Miss a live class? Revise anytime. You will never be left behind.",
+  },
+  {
+    title: "Live Q/A Sessions",
+    desc: "Get clarity directly with live interaction sessions and doubt solving.",
+  },
+  {
+    title: "Trading Psychology",
+    desc: "Build discipline, patience and confidence — the real edge in trading.",
+  },
+  {
+    title: "System Development",
+    desc: "Turn setups into a repeatable system with checklists and execution rules.",
+  },
+  {
+    title: "Premium Community",
+    desc: "Daily insights, analysis, and a focused learner community to stay aligned.",
+  },
+];
+
+const plans = [
+  { name: "Basic & Adv.", price: 110, cap: "10 Pair/Day" },
+  { name: "Adv. Pro", price: 220, cap: "20 Pair/Day" },
+  { name: "SMC", price: 330, cap: "30 Pair/Day" },
+  { name: "Time Frame", price: 440, cap: "40 Pair/Day" },
+  { name: "Liquidity", price: 550, cap: "50 Pair/Day" },
+  { name: "Bias Theory", price: 660, cap: "60 Pair/Day" },
+  { name: "ICT", price: 770, cap: "70 Pair/Day" },
+];
+
+function MiniCard({ title, desc }: { title: string; desc: string }) {
+  return (
+    <HoverLift className="h-full">
+      <div className="h-full rounded-3xl border border-black/10 bg-white/70 p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
+        <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+          {title}
+        </h3>
+        <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300/80">
+          {desc}
+        </p>
+      </div>
+    </HoverLift>
+  );
+}
 
 export default function HomePage() {
   return (
@@ -198,7 +255,7 @@ export default function HomePage() {
             {/* RIGHT */}
             <FadeUp>
               <div className="max-w-xl">
-                <p className="text-sm border-b border-slate-200 dark:border-white/10 pb-2 font-semibold tracking-[0.28em] uppercase text-slate-500 dark:text-slate-300/70">
+ <p className="text-xl uppercase tracking-[0.22em] text-gold-600/90 dark:text-gold-300/80 border-gold-600/10 dark:border-gold-300/10 border-b pb-4">
                   ABOUT US
                 </p>
 
@@ -271,7 +328,331 @@ export default function HomePage() {
           </div>
         </div>
       </Section>
+ {/* COURSES PREVIEW (Premium) */}
+<Section tone="b" id="courses">
+  <FadeUp>
+    <SectionHeader
+      kicker="Courses"
+      title="Choose the right package"
+      desc="Start with basics, then upgrade as you master concepts. Previous purchased package is adjusted in the next package."
+    />
+  </FadeUp>
 
+  <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {plans.slice(0, 6).map((p, i) => {
+      const popular = p.name === "SMC" || i === 2; // mark SMC as popular
+      return (
+        <FadeUp key={p.name} delay={0.04 * i}>
+          <HoverLift className="h-full">
+            <div
+              className={[
+                "relative h-full overflow-hidden rounded-[2rem] border p-6 shadow-sm transition",
+                "border-black/10 bg-white/70 hover:shadow-md",
+                "dark:border-white/10 dark:bg-white/5",
+                popular
+                  ? "ring-1 ring-amber-400/40 dark:ring-amber-300/30"
+                  : "",
+              ].join(" ")}
+            >
+              {/* glow */}
+              <div
+                className={[
+                  "pointer-events-none absolute -inset-24 -z-10 rounded-full blur-3xl",
+                  popular
+                    ? "bg-gradient-to-r from-amber-400/25 via-brandBlue-500/15 to-emerald-400/15"
+                    : "bg-gradient-to-r from-brandBlue-500/10 via-emerald-400/10 to-gold-400/10",
+                ].join(" ")}
+              />
+
+              {/* badge */}
+            {popular ? (
+  <div className="absolute  left-1/2 -translate-x-1/2 rounded-full border border-amber-400/40 bg-amber-400/10 text-xs font-semibold text-amber-700 dark:border-amber-300/25 dark:text-amber-200 px-4 py-1 shadow-md">
+    ⭐ Most Popular
+  </div>
+) : null}
+
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                    {p.name}
+                  </h3>
+
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    <span className="rounded-full border border-black/10 bg-black/5 px-3 py-1 text-xs font-semibold text-slate-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-200">
+                      Matching Cap: {p.cap}
+                    </span>
+                    <span className="rounded-full border border-black/10 bg-black/5 px-3 py-1 text-xs font-semibold text-slate-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-200">
+                      Live + Revision
+                    </span>
+                  </div>
+                </div>
+
+                <div className="text-right">
+                  <div className="text-xs font-semibold text-slate-500 dark:text-slate-300/70">
+                    Price
+                  </div>
+                  <div className="mt-1 inline-flex items-baseline gap-1 rounded-2xl bg-gradient-to-r from-amber-300/70 via-yellow-300/60 to-amber-200/70 px-4 py-2 text-slate-900 shadow-sm dark:from-amber-400/15 dark:via-yellow-400/10 dark:to-amber-400/15 dark:text-amber-200">
+                    <span className="text-2xl font-bold">${p.price}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 h-px bg-black/10 dark:bg-white/10" />
+
+              {/* Features */}
+              <ul className="mt-6 space-y-2 text-sm text-slate-600 dark:text-slate-300/80">
+                <li className="flex gap-2">
+                  <span className="text-emerald-500">✓</span> Strategy & market logic
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-emerald-500">✓</span> Trading psychology & discipline
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-emerald-500">✓</span> Checklist-based execution
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-emerald-500">✓</span> Premium analysis community
+                </li>
+              </ul>
+
+              <div className="mt-7 grid grid-cols-2 gap-3">
+                <Button href="/contact" variant="primary" className="w-full">
+                  Enroll
+                </Button>
+                <Button href="/courses" variant="secondary" className="w-full">
+                  Details
+                </Button>
+              </div>
+
+              <p className="mt-5 text-xs text-slate-500 dark:text-slate-300/60">
+                Upgrade rule: pay only the difference when moving to the next package.
+              </p>
+
+              {/* bottom accent */}
+              <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-amber-400 via-brandBlue-500 to-emerald-400 opacity-70" />
+            </div>
+          </HoverLift>
+        </FadeUp>
+      );
+    })}
+  </div>
+
+  <div className="mt-10 flex justify-center">
+    <Button href="/courses" variant="secondary">
+      View All Plans
+    </Button>
+  </div>
+</Section>
+     
+
+    {/* BENEFITS (Premium Timeline – Trading Style) */}
+<Section tone="c" id="benefits">
+  <FadeUp>
+    <SectionHeader
+      kicker="Benefits"
+      title="Everything you need to become consistent"
+      desc="From basics to execution: simplified strategies, repeatable setups, and the mindset to trade confidently."
+    />
+  </FadeUp>
+
+  <div className="mt-14 relative">
+    {/* subtle grid overlay (trading vibe) */}
+    <div className="pointer-events-none absolute inset-0 -z-10 opacity-[0.18] dark:opacity-[0.28]">
+      <div className="h-full w-full bg-[linear-gradient(to_right,rgba(148,163,184,0.18)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.18)_1px,transparent_1px)] bg-[size:72px_72px]" />
+    </div>
+
+    {/* vertical rail */}
+    <div className="pointer-events-none absolute left-4 sm:left-6 top-0 bottom-0 w-[2px] bg-gradient-to-b from-gold-400 via-brandBlue-500 to-emerald-400 opacity-80" />
+
+    {/* left glow */}
+    <div className="pointer-events-none absolute -left-20 top-10 h-[520px] w-[520px] rounded-full bg-brandBlue-500/10 blur-3xl" />
+    <div className="pointer-events-none absolute -left-24 bottom-10 h-[520px] w-[520px] rounded-full bg-gold-400/10 blur-3xl" />
+
+    <div className="space-y-12">
+      {highlights.map((b, i) => (
+        <FadeUp key={b.title} delay={0.05 * i}>
+          <div className="relative pl-14 sm:pl-20">
+            {/* dot */}
+            <div className="absolute left-[6px] sm:left-[14px] top-2 h-6 w-6 rounded-full bg-gradient-to-br from-gold-400 via-brandBlue-500 to-emerald-400 shadow-[0_0_18px_rgba(59,130,246,0.45)]" />
+
+            {/* BIG STEP NUMBER (Improved for light + dark) */}
+<div className="absolute -left-1 sm:left-0 top-7 select-none">
+  <span
+    className="
+      text-5xl sm:text-6xl font-extrabold tracking-tight
+      text-transparent bg-clip-text
+      bg-gradient-to-b
+     from-yellow-300 via-amber-400 to-yellow-600
+      dark:from-white/40 dark:via-white/18 dark:to-white/6
+      opacity-80
+    "
+  >
+    {String(i + 1).padStart(2, "0")}
+  </span>
+</div>
+
+            {/* row */}
+            <div className="grid gap-5 lg:grid-cols-[1.25fr_0.75fr] lg:items-center">
+              {/* left text */}
+              <div>
+                <h3 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+                  {b.title}
+                </h3>
+                <p className="mt-3 max-w-2xl text-slate-600 dark:text-slate-300/85 leading-relaxed">
+                  {b.desc}
+                </p>
+              </div>
+
+              {/* tags (fixed visibility) */}
+              <div className="flex flex-wrap gap-2 lg:justify-end lg:items-center">
+                <span className="hidden sm:inline text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-white/65">
+                  Built for:
+                </span>
+
+                {["Beginners", "Discipline", "Consistency"].map((t) => (
+                  <span
+                    key={t}
+                    className="
+                      rounded-full px-3 py-1 text-xs font-semibold
+                      border border-black/10 bg-black/5 text-slate-700
+                      dark:border-white/15 dark:bg-white/10 dark:text-white
+                      shadow-sm
+                    "
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* divider */}
+            <div className="mt-8 h-px w-full bg-black/10 dark:bg-white/10" />
+          </div>
+        </FadeUp>
+      ))}
+    </div>
+
+    {/* CTA */}
+    <div className="mt-12 flex justify-center">
+      <Button href="/contact" variant="primary">
+        Ask for Course Details
+      </Button>
+    </div>
+  </div>
+</Section>
+
+    {/* CTA (Premium + Subscribe) */}
+<Section tone="c" id="cta">
+  <FadeUp>
+    <div className="relative overflow-hidden rounded-[2.2rem] border border-black/10 bg-white/70 p-8 sm:p-10 shadow-sm dark:border-white/10 dark:bg-white/5">
+      {/* background glow */}
+      <div className="pointer-events-none absolute -top-24 left-1/2 -z-10 h-[420px] w-[900px] -translate-x-1/2 rounded-full bg-brandBlue-500/12 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-28 right-[-120px] -z-10 h-[420px] w-[420px] rounded-full bg-gold-400/14 blur-3xl" />
+
+      <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+        {/* LEFT */}
+        <div className="text-center lg:text-left">
+          <p className="text-xs font-semibold tracking-[0.28em] uppercase text-slate-500 dark:text-slate-300/70">
+            Ready to start?
+          </p>
+
+          <h2 className="mt-3 text-3xl sm:text-4xl font-semibold text-slate-900 dark:text-white">
+            Join the next batch & build a{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-400">
+              repeatable trading system
+            </span>
+          </h2>
+
+          <p className="mt-4 max-w-xl text-slate-600 dark:text-slate-300/80">
+            Get batch timings, pricing, and a quick roadmap. We’ll guide you to the
+            right plan based on your level.
+          </p>
+
+          {/* action buttons */}
+          <div className="mt-7 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+            <Button href="/contact" variant="primary">
+              Contact Now
+            </Button>
+
+            {/* WhatsApp direct link (change number) */}
+            <a
+              href="https://wa.me/919999999999?text=Hi%20AlphaBull%2C%20I%20want%20course%20details%20and%20batch%20timings."
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-2xl border border-black/10 bg-black/5 px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-black/10 transition dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
+            >
+              💬 WhatsApp Now
+            </a>
+
+            {/* phone call (optional) */}
+            <a
+              href="tel:+919999999999"
+              className="inline-flex items-center justify-center rounded-2xl border border-black/10 bg-black/5 px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-black/10 transition dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
+            >
+              📞 Call
+            </a>
+          </div>
+
+          {/* micro trust points */}
+          <div className="mt-6 flex flex-wrap gap-2 justify-center lg:justify-start">
+            {["✅ Beginner-friendly", "✅ Live Q/A", "✅ Revision support"].map((t) => (
+              <span
+                key={t}
+                className="rounded-full border border-black/10 bg-white/60 px-3 py-1 text-xs font-semibold text-slate-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-200"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* RIGHT (Subscribe box) */}
+        <div className="rounded-[1.8rem] border border-black/10 bg-white/60 p-6 sm:p-7 shadow-sm dark:border-white/10 dark:bg-white/5">
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                Get updates (free)
+              </p>
+              <p className="mt-1 text-sm text-slate-600 dark:text-slate-300/80">
+                Batch dates, webinars, and new resources — directly to your inbox.
+              </p>
+            </div>
+          <span className="whitespace-nowrap shrink-0 rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-xs font-semibold text-amber-700 dark:text-amber-200">
+  No spam
+</span>
+          </div>
+
+          <form
+            className="mt-5 flex flex-col sm:flex-row gap-3"
+            onSubmit={(e) => {
+              e.preventDefault();
+              // TODO: connect to your API (Resend/Mailchimp etc.)
+              alert("Thanks! We will contact you soon.");
+            }}
+          >
+            <input
+              required
+              type="email"
+              placeholder="Enter your email"
+              className="h-12 w-full rounded-2xl border border-black/10 bg-white px-4 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-amber-400/50 dark:border-white/10 dark:bg-black/20 dark:text-white dark:placeholder:text-white/40"
+            />
+
+            <button
+              type="submit"
+              className="h-12 rounded-2xl bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-400 px-5 text-sm font-bold text-slate-900 shadow-sm hover:opacity-95 transition"
+            >
+              Subscribe
+            </button>
+          </form>
+
+          <div className="mt-4 text-xs text-slate-500 dark:text-white/50">
+            By subscribing, you agree to receive emails from AlphaBull Trading Academy.
+          </div>
+        </div>
+      </div>
+    </div>
+  </FadeUp>
+</Section>
     </main>
   );
 }

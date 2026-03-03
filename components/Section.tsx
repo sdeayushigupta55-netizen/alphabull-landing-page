@@ -35,7 +35,7 @@ export function SectionHeader({
 }) {
   return (
     <div className={center ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
-      <p className="text-xs uppercase tracking-[0.22em] text-gold-600/90 dark:text-gold-300/80">
+      <p className="text-xl uppercase tracking-[0.22em] text-gold-600/90 dark:text-gold-300/80 border-gold-600/10 dark:border-gold-300/10 border-b pb-4">
         {kicker}
       </p>
       <h2 className="mt-3 text-3xl sm:text-4xl font-semibold text-slate-900 dark:text-white">
