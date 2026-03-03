@@ -36,7 +36,7 @@ export default function ContactPage() {
                   WhatsApp
                 </Button>
                 <Button
-                  href="mailto:support@alphabulltradingacademy.com"
+                  href="mailto:admin@alphabulltradingacademy.com"
                   variant="secondary"
                 >
                   Email
@@ -45,7 +45,7 @@ export default function ContactPage() {
 
               <div className="mt-6 text-sm text-slate-600 dark:text-slate-300/80">
                 <div>WhatsApp: +91-99999-99999</div>
-                <div className="mt-1">Email: support@alphabulltradingacademy.com</div>
+                <div className="mt-1">Email: admin@alphabulltradingacademy.com</div>
               </div>
 
               <div className="mt-6 rounded-2xl border border-black/10 bg-black/5 p-4 text-xs text-slate-600 dark:border-white/10 dark:bg-black/20 dark:text-slate-300/70">
@@ -58,10 +58,10 @@ export default function ContactPage() {
           <FadeUp delay={0.06}>
             <div className="rounded-3xl border border-black/10 bg-white/70 p-7 shadow-sm dark:border-white/10 dark:bg-white/5">
               <h3 className="text-lg font-semibold">Enquiry Form</h3>
-              <p className="mt-2 text-sm text-slate-600 dark:text-slate-300/80">
+              {/* <p className="mt-2 text-sm text-slate-600 dark:text-slate-300/80">
                 This form posts to <code>/api/contact</code>. You can later connect
                 it to email.
-              </p>
+              </p> */}
 
               <form className="mt-6 space-y-4" action="/api/contact" method="post">
                 <div>

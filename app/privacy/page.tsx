@@ -16,7 +16,7 @@ export default function PrivacyPage() {
             We may collect your name, phone number, and message when you contact us. We use this information only to respond to your enquiry.
           </p>
           <p>
-            We do not sell your personal information. For any data-related requests, contact: support@alphabulltradingacademy.com.
+            We do not sell your personal information. For any data-related requests, contact: admin@alphabulltradingacademy.com.
           </p>
           <p className="text-xs text-white/50">
             Disclaimer: Trading involves risk. This website is for educational purposes and does not provide investment advice.

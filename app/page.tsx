@@ -4,66 +4,66 @@ import { FadeUp, HoverLift } from "@/components/Motion";
 import { Section, SectionHeader } from "@/components/Section";
 import Button from "@/components/Button";
 
-const benefits = [
-  {
-    title: "Learn From Scratch",
-    desc: "Build foundations: market basics, how price moves, and the rules of risk.",
-  },
-  {
-    title: "300+ Revision Classes",
-    desc: "Missed something in live class? Revise anytime and never fall behind.",
-  },
-  {
-    title: "Live Q/A Sessions",
-    desc: "Get direct clarity on your doubts with interactive live Q/A sessions.",
-  },
-  {
-    title: "Trading Psychology",
-    desc: "Develop discipline, patience, and consistency — the real edge in trading.",
-  },
-  {
-    title: "System Development",
-    desc: "Turn setups into a repeatable system with checklists and execution rules.",
-  },
-  {
-    title: "Premium Community",
-    desc: "Stay aligned with analysis, updates, and a focused learning community.",
-  },
-];
+// const benefits = [
+//   {
+//     title: "Learn From Scratch",
+//     desc: "Build foundations: market basics, how price moves, and the rules of risk.",
+//   },
+//   {
+//     title: "300+ Revision Classes",
+//     desc: "Missed something in live class? Revise anytime and never fall behind.",
+//   },
+//   {
+//     title: "Live Q/A Sessions",
+//     desc: "Get direct clarity on your doubts with interactive live Q/A sessions.",
+//   },
+//   {
+//     title: "Trading Psychology",
+//     desc: "Develop discipline, patience, and consistency — the real edge in trading.",
+//   },
+//   {
+//     title: "System Development",
+//     desc: "Turn setups into a repeatable system with checklists and execution rules.",
+//   },
+//   {
+//     title: "Premium Community",
+//     desc: "Stay aligned with analysis, updates, and a focused learning community.",
+//   },
+// ];
 
-const plans = [
-  { name: "Basic & Adv.", price: 110, cap: "10 Pair/Day" },
-  { name: "Adv. Pro", price: 220, cap: "20 Pair/Day" },
-  { name: "SMC", price: 330, cap: "30 Pair/Day" },
-  { name: "Time Frame", price: 440, cap: "40 Pair/Day" },
-  { name: "Liquidity", price: 550, cap: "50 Pair/Day" },
-  { name: "Bias Theory", price: 660, cap: "60 Pair/Day" },
-  { name: "ICT", price: 770, cap: "70 Pair/Day" },
-];
+// const plans = [
+//   { name: "Basic & Adv.", price: 110, cap: "10 Pair/Day" },
+//   { name: "Adv. Pro", price: 220, cap: "20 Pair/Day" },
+//   { name: "SMC", price: 330, cap: "30 Pair/Day" },
+//   { name: "Time Frame", price: 440, cap: "40 Pair/Day" },
+//   { name: "Liquidity", price: 550, cap: "50 Pair/Day" },
+//   { name: "Bias Theory", price: 660, cap: "60 Pair/Day" },
+//   { name: "ICT", price: 770, cap: "70 Pair/Day" },
+// ];
 
-function Card({
-  title,
-  desc,
-}: {
-  title: string;
-  desc: string;
-}) {
-  return (
-    <HoverLift className="h-full">
-      <div className="h-full rounded-3xl border border-black/10 bg-white/70 p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
-        <div className="flex items-center gap-3">
-          <span className="h-2 w-2 rounded-full bg-gold-500" />
-          <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-            {title}
-          </h3>
-        </div>
-        <p className="mt-3 text-slate-600 dark:text-slate-300/80 leading-relaxed">
-          {desc}
-        </p>
-      </div>
-    </HoverLift>
-  );
-}
+// function Card({
+//   title,
+//   desc,
+// }: {
+//   title: string;
+//   desc: string;
+// }) {
+//   return (
+//     <HoverLift className="h-full">
+//       <div className="h-full rounded-3xl border border-black/10 bg-white/70 p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
+//         <div className="flex items-center gap-3">
+//           <span className="h-2 w-2 rounded-full bg-gold-500" />
+//           <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+//             {title}
+//           </h3>
+//         </div>
+//         <p className="mt-3 text-slate-600 dark:text-slate-300/80 leading-relaxed">
+//           {desc}
+//         </p>
+//       </div>
+//     </HoverLift>
+//   );
+// }
 
 export default function HomePage() {
   return (
