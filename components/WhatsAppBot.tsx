@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 
-const PHONE_E164 = "+919999999999"; // TODO: replace
+const PHONE_E164 = "+919310582571"; // TODO: replace
 
 function waUrl(message: string) {
   const phone = PHONE_E164.replace(/[^\d]/g, "");
